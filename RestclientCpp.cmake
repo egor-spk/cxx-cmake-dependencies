@@ -19,5 +19,6 @@ if (NOT ${lcName}_POPULATED)
     set(BUILD_SHARED_LIBS OFF CACHE INTERNAL "")
 
     add_subdirectory(${${lcName}_SOURCE_DIR} ${${lcName}_BINARY_DIR} EXCLUDE_FROM_ALL)
-    set_target_properties(restclient-cpp PROPERTIES INCLUDE_DIRECTORIES ${${lcName}_SOURCE_DIR}/include ${${lcName}_BINARY_DIR}/include)
+    set_target_properties(${NAME} PROPERTIES
+            INCLUDE_DIRECTORIES "${${lcName}_SOURCE_DIR}/include ${${lcName}_BINARY_DIR}/include")
 endif ()
